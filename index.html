@@ -1,15 +1,4 @@
 <!doctype html>
-<!--
-  PLACEHOLDERS TO REPLACE:
-  [FIRST LAST]          — owner's first and last name (Latin, as in passport / Payoneer)
-  [hello@cgpwesteel.com] — email on own domain
-  [+995 5XX XXX XXX]    — phone (also in tel: link, digits only)
-  [STREET, HOUSE], [CITY] [POSTCODE] — address exactly as in Payoneer
-  [@cgpwesteel]         — Instagram handle
-  [ETSY_URL]            — Etsy shop link
-  [IE_ID]               — Individual Entrepreneur ID code
-  img/maker.jpg         — maker photo (replace the .maker-photo placeholder)
--->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -110,7 +99,8 @@
   .split ul { list-style: none; }
   .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 32px; align-items: start; }
   .about h2 { grid-column: 1 / -1; }
-  .maker-photo { aspect-ratio: 4 / 3; background: #5f5f5d; display: grid; place-items: center; color: #9a9a97; font-size: 12px; }
+  .maker-photo { aspect-ratio: 4 / 3; overflow: hidden; }
+  .maker-photo img { filter: var(--grade); }
   .about h3 { font-size: 26px; margin-bottom: 8px; }
   .about p { font-size: 12px; }
 
@@ -248,10 +238,10 @@
       <div class="rule"></div>
       <div class="about">
         <h2>About the maker</h2>
-        <div class="maker-photo" role="img" aria-label="Photo of the maker, coming soon">photo coming soon</div>
+        <figure class="maker-photo"><img src="img/07.jpg" alt="Serotonin molecule necklace by Polina Deikina" width="1200" height="1200" loading="lazy"></figure>
         <div>
-          <h3>[FIRST LAST]</h3>
-          <p>Hi, I'm [FIRST LAST], the founder and maker behind CGPWE STEEL. I design, cut, polish and engrave each piece myself. It's a small workshop, and everything is made by hand.</p>
+          <h3>Polina Deikina</h3>
+          <p>Hi, I'm Polina Deikina, the founder and maker behind CGPWE STEEL. I design, cut, polish and engrave each piece myself. It's a small workshop, and everything is made by hand.</p>
         </div>
       </div>
     </div>
@@ -261,21 +251,21 @@
     <div class="wrap">
       <h2>Contact</h2>
       <address>
-        <span>Name:</span> [FIRST LAST]<br>
-        <span>Email:</span> <a href="mailto:hello@cgpwesteel.com">[hello@cgpwesteel.com]</a><br>
-        <span>Phone:</span> <a href="tel:+9955XXXXXXXX">[+995 5XX XXX XXX]</a><br>
-        <span>Address:</span> [STREET, HOUSE], [CITY] [POSTCODE], Georgia
+        <span>Name:</span> Polina Deikina<br>
+        <span>Email:</span> <a href="mailto:polinakirovna7@gmail.com">polinakirovna7@gmail.com</a><br>
+        <span>Phone:</span> <a href="tel:+995557561329">+995 557 561 329</a><br>
+        <span>Location:</span> Georgia
       </address>
       <div class="rule"></div>
       <div class="links">
-        <a href="https://instagram.com/cgpwesteel">Instagram: [@cgpwesteel]</a>
-        <a class="etsy" href="[ETSY_URL]">Shop on Etsy →</a>
+        <span>Custom orders and engraving requests welcome.</span>
+        <a class="etsy" href="mailto:polinakirovna7@gmail.com">Write to me →</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer>© 2026 CGPWE STEEL &nbsp;·&nbsp; [FIRST LAST], Individual Entrepreneur, Georgia &nbsp;·&nbsp; ID [IE_ID]</footer>
+<footer>© 2026 CGPWE STEEL &nbsp;·&nbsp; Polina Deikina, Georgia</footer>
 
 </body>
 </html>
