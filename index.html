@@ -1,0 +1,274 @@
+<!doctype html>
+<!--
+  PLACEHOLDERS TO REPLACE:
+  [FIRST LAST]          — owner's first and last name (Latin, as in passport / Payoneer)
+  [hello@cgpwesteel.com] — email on own domain
+  [+995 5XX XXX XXX]    — phone (also in tel: link, digits only)
+  [STREET, HOUSE], [CITY] [POSTCODE] — address exactly as in Payoneer
+  [@cgpwesteel]         — Instagram handle
+  [ETSY_URL]            — Etsy shop link
+  [IE_ID]               — Individual Entrepreneur ID code
+  img/maker.jpg         — maker photo (replace the .maker-photo placeholder)
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CGPWE STEEL — handmade stainless steel jewelry</title>
+<meta name="description" content="Stainless steel rings, pendants and engraved gifts, cut and finished by hand in Georgia. Custom engraving available.">
+<meta property="og:title" content="CGPWE STEEL">
+<meta property="og:description" content="Stainless steel, cut and engraved by hand in Georgia.">
+<meta property="og:image" content="img/08.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231b1b1a'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23efece6' text-anchor='middle'%3ECS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b1b1a;
+    --ink-2: #232321;
+    --paper: #efece6;
+    --steel: #a9adb3;
+    --text: #e6e3dd;
+    --muted: #8d8f92;
+    --accent: #e0612b;
+    --line: rgba(239, 236, 230, .16);
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --wrap: 1160px;
+    --gut: clamp(16px, 4vw, 48px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { overflow-wrap: anywhere; background: var(--ink); color: var(--text); font: 400 13px/1.7 var(--mono); -webkit-font-smoothing: antialiased; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: inherit; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; letter-spacing: -.01em; }
+
+  /* header */
+  header { position: sticky; top: 0; z-index: 10; background: rgba(27, 27, 26, .94); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .logo { font-family: var(--serif); font-size: 22px; letter-spacing: .08em; text-decoration: none; }
+  nav { display: flex; gap: 14px; font-size: 12px; }
+  nav a { text-decoration: none; color: var(--text); }
+  nav a:hover { color: var(--accent); }
+  nav span { color: var(--muted); }
+
+  /* hero */
+  .hero { display: grid; grid-template-columns: 5fr 7fr; align-items: center; min-height: min(72vh, 640px); position: relative; }
+  .hero h1 { font-size: clamp(38px, 5vw, 64px); padding: 48px 0; position: relative; z-index: 1; }
+  .hero .see { display: inline-block; margin-top: 28px; font: 13px var(--mono); text-decoration: none; border-bottom: 1px solid var(--steel); padding-bottom: 4px; }
+  .hero .see:hover { color: var(--accent); border-color: var(--accent); }
+  .hero figure { height: 100%; min-height: 380px; position: relative; margin-right: 40px; }
+  .hero figure img { object-position: center 40%; }
+  .vert { position: absolute; right: -32px; top: 64px; writing-mode: vertical-rl; font-size: 11px; color: var(--muted); letter-spacing: .06em; }
+
+  /* section heads */
+  .kicker { display: flex; align-items: center; gap: 12px; font-size: 11px; color: var(--muted); }
+  .kicker::after { content: ""; width: 96px; height: 1px; background: var(--steel); opacity: .6; }
+  .head { display: flex; justify-content: space-between; align-items: end; margin: 14px 0 24px; gap: 16px; }
+  .head h2 { font-size: clamp(40px, 5vw, 56px); }
+  .head p { font-size: 11px; color: var(--steel); }
+
+  /* work grid */
+  #work { padding-top: 56px; padding-bottom: 64px; }
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 14px; align-items: start; }
+  .item { grid-column: span 3; }
+  .item figure { overflow: hidden; background: var(--ink-2); aspect-ratio: 4 / 3; }
+  .item.tall figure { aspect-ratio: 1 / 1; }
+  .item.wide { grid-column: span 4; }
+  .item img { transition: transform .6s ease; }
+  .item:hover img { transform: scale(1.04); }
+  .item figcaption { margin-top: 10px; font-size: 11px; }
+  .item figcaption b { font-weight: 400; color: var(--muted); margin-right: 10px; }
+  .item:nth-child(2) { margin-top: -6px; }
+  .item:nth-child(6) { margin-top: 18px; }
+
+  /* paper sections */
+  .paper { background: var(--paper); color: var(--ink); }
+  .paper .kicker { color: #6f6f6c; }
+
+  /* engraving */
+  .engrave .wrap { display: grid; grid-template-columns: 3.2fr 3fr 3fr 1.6fr; gap: 24px; align-items: center; padding-top: 32px; padding-bottom: 32px; }
+  .engrave h2 { font-size: clamp(34px, 4vw, 46px); margin-bottom: 18px; }
+  .engrave p { max-width: 30ch; }
+  .engrave figure { aspect-ratio: 4 / 3; overflow: hidden; }
+  .engrave .aside { border-left: 1px solid #b5b2ab; padding: 20px 0 20px 28px; font-size: 12px; }
+
+  /* materials + about */
+  .split .wrap { display: grid; grid-template-columns: 1fr 1px 2fr; gap: 36px; padding-top: 48px; padding-bottom: 48px; }
+  .split .rule { background: var(--line); }
+  .split h2 { font-size: 34px; margin-bottom: 22px; }
+  .split ul { list-style: none; }
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  .about h2 { grid-column: 1 / -1; }
+  .maker-photo { aspect-ratio: 4 / 3; background: #5f5f5d; display: grid; place-items: center; color: #9a9a97; font-size: 12px; }
+  .about h3 { font-size: 30px; margin-bottom: 10px; }
+
+  /* contact */
+  .contact .wrap { display: grid; grid-template-columns: 2.2fr 4fr 1px 3fr; gap: 32px; align-items: start; padding-top: 32px; padding-bottom: 40px; }
+  .contact h2 { font-size: 34px; display: flex; align-items: center; gap: 18px; }
+  .contact h2::after { content: ""; width: 48px; height: 1px; background: var(--ink); }
+  .contact address { font-style: normal; font-size: 12px; }
+  .contact address span { color: #6f6f6c; }
+  .contact a { text-decoration: none; }
+  .contact a:hover { color: var(--accent); }
+  .contact .rule { background: #b5b2ab; align-self: stretch; }
+  .contact .links { font-size: 12px; display: grid; gap: 14px; padding-top: 14px; }
+  .etsy { color: var(--accent); text-decoration: underline !important; text-underline-offset: 3px; }
+
+  footer { padding: 22px 0; font-size: 11px; text-align: center; color: var(--steel); }
+
+  /* responsive */
+  @media (max-width: 900px) {
+    /* hero: text over the photo, photo pushed right */
+    .hero { display: block; min-height: 0; padding: 0; max-width: none; }
+    .hero > div { position: relative; z-index: 1; padding: 36px var(--gut) 40px; max-width: 62%; }
+    .hero h1 { padding: 0; font-size: clamp(30px, 7.4vw, 44px); text-shadow: 0 1px 12px rgba(0, 0, 0, .6); }
+    .hero .see { margin-top: 18px; font-size: 12px; }
+    .hero figure { position: absolute; inset: 0 0 0 38%; margin: 0; min-height: 0; z-index: 0; }
+    .hero figure::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--ink) 0%, rgba(27, 27, 26, .7) 40%, rgba(27, 27, 26, .15) 80%); }
+    .hero figure img { object-position: 70% 50%; }
+    .vert { display: none; }
+
+    #work { padding-top: 8px; padding-bottom: 40px; }
+    .kicker::after { width: 140px; }
+    .head { margin: 6px 0 14px; }
+    .head p { text-align: right; max-width: 18ch; }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; }
+    .item, .item.wide { grid-column: span 1; }
+    .item figure, .item.tall figure { aspect-ratio: 2 / 1; }
+    .item:nth-child(n) { margin-top: 0; }
+    .item:last-child { grid-column: 1 / -1; }
+    .item:last-child figure { aspect-ratio: 4 / 1.3; }
+    .item figcaption { margin-top: 6px; }
+
+    .engrave .wrap { grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; padding-top: 18px; padding-bottom: 18px; }
+    .engrave h2 { font-size: 26px; margin-bottom: 10px; }
+    .engrave p { font-size: 11px; }
+    .engrave figure { aspect-ratio: 3 / 4; }
+    .engrave .aside { display: none; }
+
+    .split .wrap { grid-template-columns: 1fr; gap: 24px; padding-top: 28px; padding-bottom: 28px; }
+    .split .rule { height: 1px; }
+    .split h2 { font-size: 26px; margin-bottom: 12px; }
+    .about { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 0 16px; align-items: start; }
+    .about h3 { font-size: 22px; }
+    .about p { font-size: 12px; }
+
+    .contact .wrap { grid-template-columns: 1fr; gap: 14px; padding-top: 24px; padding-bottom: 28px; }
+    .contact h2 { font-size: 28px; }
+    .contact .rule { height: 1px; }
+    .contact .links { padding-top: 0; grid-auto-flow: column; justify-content: space-between; }
+    footer { padding: 18px var(--gut); line-height: 1.8; }
+  }
+  @media (max-width: 560px) {
+    nav { gap: 8px; font-size: 11px; }
+    .logo { font-size: 18px; }
+    .hero > div { max-width: 70%; }
+  }
+  @media (max-width: 420px) {
+    .engrave .wrap { grid-template-columns: 1fr 1fr; }
+    .engrave .text { grid-column: 1 / -1; }
+    .engrave figure { aspect-ratio: 4 / 3; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">CGPWE STEEL</a>
+    <nav><a href="#work">Work</a><span>·</span><a href="#about">About</a><span>·</span><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div>
+      <h1>Stainless steel,<br>cut and engraved<br>by hand in Georgia.</h1>
+      <a class="see" href="#work">See the work ↓</a>
+    </div>
+    <figure>
+      <img src="img/08.jpg" alt="Star mandala pendant on a chain, stainless steel" width="1200" height="1200">
+      <span class="vert">№08 &nbsp; Star Mandala</span>
+    </figure>
+  </section>
+
+  <section id="work" class="wrap">
+    <div class="kicker">01 — 11</div>
+    <div class="head"><h2>Work</h2><p>Handmade pieces, stainless steel.</p></div>
+    <div class="grid">
+      <div class="item"><figure><img src="img/01.jpg" alt="Geometric square frame ring on a stone" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№01</b>Frame Ring</figcaption></div>
+      <div class="item tall"><figure><img src="img/02.jpg" alt="Bar ring engraved with Stay Strong" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№02</b>Stay Strong Bar Ring</figcaption></div>
+      <div class="item"><figure><img src="img/03.jpg" alt="Engraved guitar pick keychain For Luck in a gift tin" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№03</b>For Luck Pick Keychain</figcaption></div>
+      <div class="item"><figure><img src="img/04.jpg" alt="Guitar pick pendant Be free in your soul with engraved tin lid" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№04</b>Be Free Pick Pendant</figcaption></div>
+      <div class="item"><figure><img src="img/05.jpg" alt="Custom capoeira school logo pendant" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№05</b>Custom Logo Pendant</figcaption></div>
+      <div class="item"><figure><img src="img/06.jpg" alt="Vitruvian Man pendant on a chain" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№06</b>Vitruvian Man</figcaption></div>
+      <div class="item"><figure><img src="img/07.jpg" alt="Serotonin molecule necklace" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№07</b>Serotonin</figcaption></div>
+      <div class="item"><figure><img src="img/08.jpg" alt="Star mandala pendant" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№08</b>Star Mandala</figcaption></div>
+      <div class="item wide"><figure><img src="img/09.jpg" alt="Triskelion pendant on a chain" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№09</b>Triskelion</figcaption></div>
+      <div class="item wide"><figure><img src="img/10.jpg" alt="Merkaba star tetrahedron pendant" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№10</b>Merkaba</figcaption></div>
+      <div class="item wide"><figure><img src="img/11.jpg" alt="Ring with two birds" width="1200" height="1200" loading="lazy"></figure><figcaption><b>№11</b>Two Birds Ring</figcaption></div>
+    </div>
+  </section>
+
+  <section class="paper engrave">
+    <div class="wrap">
+      <div class="text">
+        <h2>Custom engraving</h2>
+        <p>You can add your own words, initials or a symbol to a ring, pick, or the lid of a gift box. It makes a small piece feel a lot more personal.</p>
+      </div>
+      <figure><img src="img/03.jpg" alt="Engraved gift tin lid For my fated soulmate" width="1200" height="1200" loading="lazy"></figure>
+      <figure><img src="img/02.jpg" alt="Close-up of Stay Strong engraving" width="1200" height="1200" loading="lazy"></figure>
+      <p class="aside">Your words.<br>My work.</p>
+    </div>
+  </section>
+
+  <section class="split" id="about">
+    <div class="wrap">
+      <div>
+        <h2>Materials</h2>
+        <ul>
+          <li>316L stainless steel</li>
+          <li>Doesn't tarnish or turn skin green</li>
+          <li>Hypoallergenic</li>
+          <li>Each piece ships in a gift tin.</li>
+        </ul>
+      </div>
+      <div class="rule"></div>
+      <div class="about">
+        <h2>About the maker</h2>
+        <div class="maker-photo" role="img" aria-label="Photo of the maker, coming soon">photo coming soon</div>
+        <div>
+          <h3>[FIRST LAST]</h3>
+          <p>Hi, I'm [FIRST LAST], the founder and maker behind CGPWE STEEL. I design, cut, polish and engrave each piece myself. It's a small workshop, and everything is made by hand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper contact" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <address>
+        <span>Name:</span> [FIRST LAST]<br>
+        <span>Email:</span> <a href="mailto:hello@cgpwesteel.com">[hello@cgpwesteel.com]</a><br>
+        <span>Phone:</span> <a href="tel:+9955XXXXXXXX">[+995 5XX XXX XXX]</a><br>
+        <span>Address:</span> [STREET, HOUSE], [CITY] [POSTCODE], Georgia
+      </address>
+      <div class="rule"></div>
+      <div class="links">
+        <a href="https://instagram.com/cgpwesteel">Instagram: [@cgpwesteel]</a>
+        <a class="etsy" href="[ETSY_URL]">Shop on Etsy →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 CGPWE STEEL &nbsp;·&nbsp; [FIRST LAST], Individual Entrepreneur, Georgia &nbsp;·&nbsp; ID [IE_ID]</footer>
+
+</body>
+</html>
